@@ -44,3 +44,45 @@ const myFunctionalComponent = (props) => {
     const [value, setValue] = useState(() => expensiveComputation(props.argValue))
 }
 ```
+
+## useEffect
+
+This hook gets called everytime a component rerenders. It takes two arguments, the first is an anonymous function where you can put in all the code you want to be executed whenever the component rerenders and the second argument is a depencency array which will cause the hook to be called whenever the values passed change. You can have more than once `useEffect` in a component and they will fire off in order.
+
+### Syntax examples
+
+Can be used without a dependency array
+
+```JSX
+useEffect(() => {
+    //code to be executed whenever the component rerenders
+})
+```
+
+Can be used with an empty dependency array
+
+```JSX
+useEffect(() => {
+    //code to be executed just once
+}, [])
+```
+
+With dependency array
+
+```JSX
+useEffect(() => {
+    //code to be executed whenever the component rerenders because value1 or value2 changed
+}, [value1, value2])
+```
+
+`useEffect` can also return a clean up function which can be used to clean up the values when the component unmounts
+
+```JSX
+useEffect(() => {
+    //code to be executed whenever the component rerenders because value1 changed
+
+    return () => {
+        // code to clean up values after component unmounts
+    }
+}, [value])
+```
