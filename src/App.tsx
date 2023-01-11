@@ -1,4 +1,10 @@
+import UseState from './usestate'
+
 const App = () => {
-  return <div>Habari Dunia</div>
+  return (
+    <>
+      <UseState />
+    </>
+  )
 }
 export default App
