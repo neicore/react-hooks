@@ -3,18 +3,14 @@ import { useFetch } from './useFetch'
 
 const UseEffect = () => {
   const getNumFromLocalStorage = () => {
-    const numFromLocal = localStorage.getItem('num')
-    if (numFromLocal !== 'undefined') {
-      if (numFromLocal) {
-        const localNum = JSON.parse(numFromLocal)
-        return Number(localNum)
-      } else {
-        return 4
-      }
-    } else {
-      return 4
+    const numFromLocal = localStorage?.getItem('num')
+    if (numFromLocal !== 'undefined' && numFromLocal) {
+      return Number(JSON.parse(numFromLocal))
     }
+    
+    return 4
   }
+
   const [num, setNum] = useState<number>(() => getNumFromLocalStorage())
 
   const { data, loading } = useFetch(`http://numbersapi.com/${num}`)
