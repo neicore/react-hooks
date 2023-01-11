@@ -4,10 +4,11 @@ import { useFetch } from './useFetch'
 const UseEffect = () => {
   const getNumFromLocalStorage = () => {
     const numFromLocal = localStorage?.getItem('num')
+
     if (numFromLocal !== 'undefined' && numFromLocal) {
       return Number(JSON.parse(numFromLocal))
     }
-    
+
     return 4
   }
 
