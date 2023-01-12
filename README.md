@@ -47,7 +47,7 @@ const myFunctionalComponent = (props) => {
 
 ## useEffect
 
-This hook gets called everytime a component rerenders. It takes two arguments, the first is an anonymous function where you can put in all the code you want to be executed whenever the component rerenders and the second argument is a depencency array which will cause the hook to be called whenever the values passed change. You can have more than once `useEffect` in a component and they will fire off in order.
+This hook gets called everytime a component renders / rerenders. It takes two arguments, the first is an anonymous function where you can put in all the code you want to be executed whenever the component rerenders and the second argument is a depencency array which will cause the hook to be called whenever the values passed change. You can have more than once `useEffect` in a component and they will fire off in order.
 
 ### Syntax examples
 
@@ -113,4 +113,18 @@ useEffect(() => {
 if(isCurrent.current){
     //logic for setting state goes here
 }
+```
+
+## useLayoutEffect
+
+This runs synchronously immediately after React has performed all DOM mutations. This can be useful if you need to make DOM measurements (like getting the scroll position or other styles for an element) and then make DOM mutations or trigger a synchronous re-render by updating state.
+
+Your code runs immediately after the DOM has been updated, but before the browser has had a chance to "paint" those changes (the user doesn't actually see the updates until after the browser has repainted)
+
+It's similar to useEffect where it can have a dependency array which can be empty to make the hook run only once or take a value or values which will cause the hook to run everytime they change. The hook can also not have a dependency array which will mean that it will get called whenever the component render.
+
+### Syntax Examples
+
+```JSX
+useLayoutEffect(() => {}, [])
 ```
