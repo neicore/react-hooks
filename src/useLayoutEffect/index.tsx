@@ -19,7 +19,7 @@ const UseLayoutEffect = () => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   useLayoutEffect(() => {
-    console.log(inputRef.current?.getBoundingClientRect())
+    // console.table(inputRef.current?.getBoundingClientRect())
   }, [])
 
   const { rect, ref } = useMeasure([data])
