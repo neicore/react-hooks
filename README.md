@@ -1,4 +1,4 @@
-# React Hooks
+# React Hooks Basics
 
 Learning react hooks with practice. This read me is dedicated to my future self. I know you are here because you took one week break from coding and now you have forgotten everything.
 
@@ -85,4 +85,32 @@ useEffect(() => {
         // code to clean up values after component unmounts
     }
 }, [value])
+```
+
+## useRef
+
+`useRef` hook allows to persist values between renders. Can store a mutable value that does not cause a re-render when updated. It can access the DOM directly and can be used to store a reference to a DOM node.
+
+### Syntax Examples
+
+```TSX
+const ref = useRef(1) // initial value is a number
+const reference = useRef('name') // initial value is a string
+const inputRef = useRef<HTMLInputElement>(null) // initial value is null
+```
+
+### A use case
+
+Another use case is solving an issue of updating state when component has unmounted. With `useRef`, you can check if the component is still there and then execute the state update.
+
+```JSX
+const isCurrent = useRef(true)
+
+useEffect(() => {
+    return () => isCurrent.current = false
+}, [])
+
+if(isCurrent.current){
+    //logic for setting state goes here
+}
 ```
