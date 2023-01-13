@@ -66,6 +66,7 @@ const UseReducer = () => {
           Decrease by 1
         </button>
       </div>
+      <a href="/">Go home</a>
     </div>
   )
 }

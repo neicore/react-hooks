@@ -43,6 +43,7 @@ const UseLayoutEffect = () => {
           -
         </button>
       </div>
+      <a href="/">Go home</a>
     </div>
   )
 }

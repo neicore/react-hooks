@@ -37,6 +37,7 @@ const UseEffect = () => {
           -
         </button>
       </div>
+      <a href="/">Go home</a>
     </div>
   )
 }

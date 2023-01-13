@@ -45,6 +45,7 @@ const UseRef = () => {
       <br />
 
       <h4>Count rerenders: {rerenders.current++}</h4>
+      <a href="/">Go home</a>
     </div>
   )
 }

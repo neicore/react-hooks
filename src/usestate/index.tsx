@@ -71,6 +71,7 @@ const UseState = () => {
       <p>
         Form output: {output.name} {output.email}
       </p>
+      <a href="/">Go home</a>
     </div>
   )
 }
