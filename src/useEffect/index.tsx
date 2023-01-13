@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { UserContext } from '../useContext'
 import { useFetch } from './useFetch'
 
 const UseEffect = () => {
+  const msg = useContext(UserContext)
   const getNumFromLocalStorage = () => {
     const numFromLocal = localStorage?.getItem('num')
 
@@ -22,6 +24,7 @@ const UseEffect = () => {
 
   return (
     <div>
+      <h1>{msg}</h1>
       <h1>useEffect Examples</h1>
 
       <h4>Fact about a number</h4>

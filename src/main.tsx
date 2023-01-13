@@ -9,6 +9,7 @@ import UseEffect from './useEffect'
 import UseLayoutEffect from './useLayoutEffect'
 import UseReducer from './useReducer'
 import UseRef from './useRef'
+import { UserContext } from './useContext'
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <UserContext.Provider value={'hello from context'}>
+      <RouterProvider router={router} />
+    </UserContext.Provider>
   </React.StrictMode>
 )

@@ -158,3 +158,11 @@ calculateValue: The function calculating the value that you want to cache. It sh
 ## useReducer
 
 The `useReducer` hook is used to store and update states, just like the `useState` hook. It accepts a `reducer` function as its first parameter and the initial state as the second. `useReducer` returns an array that holds the current state value and a `dispatch` function to which you can pass an action and later invoke it.
+
+## useContext
+
+lets you read and subscribe to context from your component. React Context is a method to pass props from parent to child component(s), by storing the props in a store and using these props from the store by child component(s) without actually passing them manually at each level of the component tree(prop drilling)
+
+```JSX
+const value = useContext(SomeContext)
+```
