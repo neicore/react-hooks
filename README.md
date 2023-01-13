@@ -154,3 +154,7 @@ const cachedFn = useMemo(calculateValue, dependencies)
 ### Parameters
 
 calculateValue: The function calculating the value that you want to cache. It should be pure, should take no arguments, and should return a value of any type. React will call your function during the initial render. On subsequent renders, React will return the same value again if the dependencies have not changed since the last render. Otherwise, it will call calculateValue, return its result, and store it in case it can be reused later.
+
+## useReducer
+
+The `useReducer` hook is used to store and update states, just like the `useState` hook. It accepts a `reducer` function as its first parameter and the initial state as the second. `useReducer` returns an array that holds the current state value and a `dispatch` function to which you can pass an action and later invoke it.
