@@ -16,12 +16,6 @@ const UseLayoutEffect = () => {
   const [num, setNum] = useState<number>(() => getNumFromLocalStorage())
   const { data, loading } = useFetch(`http://numbersapi.com/${num}`)
 
-  const inputRef = useRef<HTMLInputElement>(null)
-
-  useLayoutEffect(() => {
-    // console.table(inputRef.current?.getBoundingClientRect())
-  }, [])
-
   const { rect, ref } = useMeasure([data])
 
   useEffect(() => {
@@ -32,15 +26,7 @@ const UseLayoutEffect = () => {
     <div>
       <h1>useLayoutEffect Example</h1>
 
-      <h4>Example 1</h4>
-      <input
-        type="text"
-        name="username"
-        placeholder="username"
-        ref={inputRef}
-      />
-
-      <h4>Example 2</h4>
+      <h4>Example</h4>
       <h4>Fact about a number</h4>
       <div style={{ display: 'flex' }}>
         <p ref={ref}>{loading ? 'loading...' : data}</p>
